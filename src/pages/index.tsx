@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { ReactElement } from "react";
 
 type SocialLinkProps = {
   url: string
