@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 
-export default function Layout({ children }: {children: ReactNode}) {
+const Layout = ({ children }: {children: ReactNode}) => {
     return (
         <>
             <Header />
@@ -11,3 +11,5 @@ export default function Layout({ children }: {children: ReactNode}) {
         </>
     )
 }
+
+export default Layout
