@@ -1,12 +1,12 @@
-import { NextPage } from "next";
+import { NextPage } from 'next'
 
 const About: NextPage = () => {
-    return (
+  return (
     <div>
-        <h1>About</h1>
-        <p>プロフィール</p>
+      <h1>About</h1>
+      <p>プロフィール</p>
     </div>
-    )
+  )
 }
 
 export default About
