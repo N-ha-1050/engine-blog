@@ -10,9 +10,9 @@ const socialLinks: SocialLinkProps[] = [
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
-      <h1>N_ha</h1>
-      <p>Hello, World!</p>
-      <ul className="flex gap-5">
+      <h1 className="text-4xl pb-8">N_ha</h1>
+      <p className="pb-2">プログラミングの活動記録です</p>
+      <ul className="flex gap-4">
         {socialLinks.map((socialLink, index) => (
           <SocialLink key={index} {...socialLink} />
         ))}
