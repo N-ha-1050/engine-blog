@@ -7,9 +7,12 @@ export type PostPreviewProps = {
 
 export const PostPreview: React.FC<PostPreviewProps> = ({ post }) => {
   return (
-    <Link href={`/posts/${post.id}`}>
-      <h1>{post.title}</h1>
-      <div>{post.content}</div>
+    <Link
+      href={`/posts/${post.id}`}
+      className="p-2 border-2 rounded-xl border-blue-950 duration-200 hover:border-blue-700 hover:bg-blue-50"
+    >
+      <h1 className="text-xl truncate">{post.title}</h1>
+      <div className="truncate indent-4">{post.content}</div>
     </Link>
   )
 }

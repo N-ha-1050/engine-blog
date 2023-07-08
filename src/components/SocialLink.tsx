@@ -7,7 +7,7 @@ export type SocialLinkProps = {
 
 export const SocialLink = ({ url, displayName }: SocialLinkProps) => {
   return (
-    <li className="hover:opacity-80 duration-200 hover:border-b border-gray-800">
+    <li className="border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950">
       <Link href={url}>{displayName}</Link>
     </li>
   )

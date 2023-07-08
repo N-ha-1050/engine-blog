@@ -57,11 +57,8 @@ export const getPosts: GetPosts = () => {
     })
     .filter((post) => {
       const createdAtDate = new Date(post.createdAt)
-      console.log('createdAtDate: ', createdAtDate)
-      console.log('todayDate: ', todayDate)
       return createdAtDate.getTime() <= todayDate.getTime()
     })
-  console.log('posts: ', posts)
   return posts
 }
 

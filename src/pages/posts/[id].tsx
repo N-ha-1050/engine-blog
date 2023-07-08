@@ -2,13 +2,18 @@ import { getPost, getPostsId } from '@/lib/getPost'
 import { Post } from '@/lib/post'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
+import markdownit from 'markdown-it'
+
 const PostDetail: NextPage<Props> = ({ post }) => {
   const createdAtDate = new Date(post.createdAt)
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>作成日: {createdAtDate.toLocaleDateString()}</p>
-      <div>{post.content}</div>
+      <h1 className="text-4xl mt-8 mb-2">{post.title}</h1>
+      <p className="mb-16">作成日: {createdAtDate.toLocaleDateString()}</p>
+      <div
+        className="prose m-0"
+        dangerouslySetInnerHTML={{ __html: markdownit().render(post.content) }}
+      />
     </div>
   )
 }

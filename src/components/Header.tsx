@@ -5,7 +5,7 @@ const Header = () => {
     <header className="flex items-center py-2.5 px-5 max-w-7xl mx-auto">
       <Link
         href="/"
-        className="text-blue-950 border-b duration-200 border-transparent hover:border-blue-950"
+        className="border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950"
       >
         活動記録
       </Link>
@@ -15,8 +15,8 @@ const Header = () => {
       >
         N_ha
       </Link> */}
-      <div className="flex-1" />
-      <button className="text-blue-950">Menu</button>
+      {/* <div className="flex-1" />
+      <button className="text-blue-950">Menu</button> */}
     </header>
   )
 }

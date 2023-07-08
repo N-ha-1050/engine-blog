@@ -17,5 +17,5 @@ module.exports = {
       body: ['Noto Sans JP', 'Noto Color Emoji', 'Noto Sans', 'Noto Sans Mono'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
