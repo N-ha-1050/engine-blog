@@ -1,5 +1,5 @@
+import { Post } from '@/lib/post'
 import Link from 'next/link'
-import { Post } from './PostsPreview'
 
 export type PostPreviewProps = {
   post: Post

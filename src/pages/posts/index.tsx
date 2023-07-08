@@ -1,10 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
-import { Post, PostsPreview } from '@/components/PostsPreview'
-
-const samplePosts: Post[] = [
-  { id: 1, title: 'Test', content: 'test content' },
-  { id: 2, title: 'Second', content: 'second content' },
-]
+import { PostsPreview } from '@/components/PostsPreview'
+import { Post } from '@/lib/post'
+import { getPosts } from '@/lib/getPost'
 
 type Props = {
   posts: Post[]
@@ -19,9 +16,10 @@ const PostList: NextPage<Props> = ({ posts }) => {
   )
 }
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  const posts = getPosts()
   return {
     props: {
-      posts: samplePosts,
+      posts,
     },
   }
 }

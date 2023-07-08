@@ -1,10 +1,5 @@
+import { Post } from '@/lib/post'
 import { PostPreview } from './PostPreview'
-
-export type Post = {
-  id: number
-  title: string
-  content: string
-}
 
 export type PostsPreviewProps = {
   posts: Post[]
