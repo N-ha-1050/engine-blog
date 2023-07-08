@@ -7,7 +7,7 @@ const Header = () => {
         href="/"
         className="border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950"
       >
-        活動記録
+        プログラミング日記
       </Link>
       {/* <Link
         href="/"

@@ -10,7 +10,7 @@ type Props = {
 const PostList: NextPage<Props> = ({ posts }) => {
   return (
     <div>
-      <h1 className="mb-8 text-4xl">活動記録一覧</h1>
+      <h1 className="mb-8 text-4xl">一覧</h1>
       <PostsPreview posts={posts} />
     </div>
   )
