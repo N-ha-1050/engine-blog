@@ -7,7 +7,7 @@ export type PostsPreviewProps = {
 
 export const PostsPreview: React.FC<PostsPreviewProps> = ({ posts }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2 content-around">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {posts.map((post) => (
         <PostPreview key={post.id} post={post} />
       ))}

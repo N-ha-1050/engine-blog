@@ -19,8 +19,11 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setOpen(!isOpen)}
-            className="m-4 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950 md:hidden"
+            className="m-4 flex flex-row gap-1 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950 md:hidden"
           >
+            <span className="material-symbols-outlined">
+              {isOpen ? 'close' : 'menu'}
+            </span>
             Menu
           </button>
           {/* <Link
@@ -33,7 +36,7 @@ const Header = () => {
       <button className="text-blue-950">Menu</button> */}
         </div>
         <div className={`${isOpen ? 'block' : 'hidden'} md:block`}>
-          <ul className="p-2 flex flex-col md:flex-row items-center">
+          <ul className="p-2 flex flex-col gap-4 md:flex-row items-center">
             {menuLinks.map((menuLink) => (
               <MenuLink key={menuLink.text} {...menuLink} />
             ))}
