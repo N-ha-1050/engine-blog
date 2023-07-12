@@ -60,7 +60,6 @@ export const getPosts: GetPosts = () => {
       return createdAtDate.getTime() <= todayDate.getTime()
     })
     .sort((post1, post2) => post2.id - post1.id)
-  console.log(posts)
   return posts
 }
 
