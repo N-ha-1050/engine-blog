@@ -12,10 +12,18 @@ type Props = {
 
 const PostDetail: NextPage<Props> = ({ postWithHtml: post }) => {
   const createdAtDate = new Date(post.createdAt)
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
   return (
     <div>
       <h1 className="text-4xl mt-8 mb-2">{post.title}</h1>
-      <p className="mb-16">活動日: {createdAtDate.toLocaleDateString()}</p>
+      <p className="mb-16">
+        活動日: {createdAtDate.toLocaleDateString(undefined, options)}
+      </p>
       <div
         className="prose m-0"
         dangerouslySetInnerHTML={{
