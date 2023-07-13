@@ -9,17 +9,17 @@ const Header = () => {
   const [isOpen, setOpen] = React.useState<boolean>(false)
   return (
     <header className="bg-blue-100">
-      <nav className="py-2.5 px-5 max-w-7xl mx-auto md:flex md:items-center md:justify-between">
-        <div className="flex justify-between items-center">
+      <nav className="mx-auto max-w-7xl px-5 py-2.5 md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="m-4 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950"
+            className="m-4 border-b border-transparent duration-200 hover:border-blue-950 hover:opacity-80"
           >
             プログラミング日記
           </Link>
           <button
             onClick={() => setOpen(!isOpen)}
-            className="m-4 flex flex-row gap-1 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950 md:hidden"
+            className="m-4 flex  flex-row gap-1 border-b border-transparent duration-200 hover:border-blue-950 hover:opacity-80 md:hidden"
           >
             <span className="material-symbols-outlined">
               {isOpen ? 'close' : 'menu'}
@@ -36,7 +36,7 @@ const Header = () => {
       <button className="text-blue-950">Menu</button> */}
         </div>
         <div className={`${isOpen ? 'block' : 'hidden'} md:block`}>
-          <ul className="p-2 flex flex-col gap-4 md:flex-row items-center">
+          <ul className="flex flex-col items-center gap-4 p-2 md:flex-row">
             {menuLinks.map((menuLink) => (
               <MenuLink key={menuLink.text} {...menuLink} />
             ))}

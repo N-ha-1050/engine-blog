@@ -11,8 +11,8 @@ const socialLinks: SocialLinkProps[] = [
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-4xl mb-2">N_ha</h1>
-      <ul className="flex gap-4 mb-4">
+      <h1 className="mb-2 text-4xl">N_ha</h1>
+      <ul className="mb-4 flex gap-4">
         {socialLinks.map((socialLink, index) => (
           <SocialLink key={index} {...socialLink} />
         ))}
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <p className="mb-2">プログラミングの活動記録です</p>
       <Link
         href="posts/"
-        className="mb-2 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950"
+        className="mb-2 border-b border-transparent duration-200 hover:border-blue-950 hover:opacity-80"
       >
         すべて見る
       </Link>

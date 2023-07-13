@@ -37,7 +37,7 @@ type EmojiPreviewProps = {
 
 const EmojiPreview: React.FC<EmojiPreviewProps> = ({ emoji }) => {
   return (
-    <p className="aspect-square text-4xl p-4 rounded-lg bg-white">{emoji}</p>
+    <p className="aspect-square rounded-lg bg-white p-4 text-4xl">{emoji}</p>
   )
 }
 
@@ -48,7 +48,7 @@ type TaskPreviewProps = {
 const TaskPreview: React.FC<TaskPreviewProps> = ({ task }) => {
   return (
     // <div className="grid grid-cols-3 border-2 border-blue-400 rounded-lg p-2 m-2 duration-200 hover:border-blue-800">
-    <div className="flex p-4 gap-4">
+    <div className="flex gap-4 p-4">
       <EmojiPreview emoji={task.emoji} />
       <div className="grid grid-rows-2">
         <b className="text-lg">{task.title}</b>

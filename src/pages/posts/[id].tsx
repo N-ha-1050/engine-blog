@@ -20,7 +20,7 @@ const PostDetail: NextPage<Props> = ({ postWithHtml: post }) => {
   }
   return (
     <div>
-      <h1 className="text-4xl mt-8 mb-2">{post.title}</h1>
+      <h1 className="mb-2 mt-8 text-4xl">{post.title}</h1>
       <p className="mb-16">
         活動日: {createdAtDate.toLocaleDateString(undefined, options)}
       </p>
