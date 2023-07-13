@@ -1,8 +1,6 @@
 import fs from 'fs'
 // import * as fs from 'node:fs'
 import { Post } from './post'
-import path from 'path'
-import { test } from 'node:test'
 // const fs = require('node:fs')
 // const path = require('node:path')
 

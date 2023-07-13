@@ -2,9 +2,15 @@ import { getPost, getPostsId } from '@/lib/getPost'
 import { Post } from '@/lib/post'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import markdownit from 'markdown-it'
+import MarkdownIt from 'markdown-it'
 
-const PostDetail: NextPage<Props> = ({ post }) => {
+type PostWithHtml = Post & { html: string }
+
+type Props = {
+  postWithHtml: PostWithHtml
+}
+
+const PostDetail: NextPage<Props> = ({ postWithHtml: post }) => {
   const createdAtDate = new Date(post.createdAt)
   return (
     <div>
@@ -12,14 +18,12 @@ const PostDetail: NextPage<Props> = ({ post }) => {
       <p className="mb-16">活動日: {createdAtDate.toLocaleDateString()}</p>
       <div
         className="prose m-0"
-        dangerouslySetInnerHTML={{ __html: markdownit().render(post.content) }}
+        dangerouslySetInnerHTML={{
+          __html: post.html,
+        }}
       />
     </div>
   )
-}
-
-type Props = {
-  post: Post
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
@@ -32,9 +36,14 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   if (!post) {
     throw new Error(`Could not find a post with id:${params?.id}`)
   }
+  const md = new MarkdownIt()
+  const postWithHtml: PostWithHtml = {
+    ...post,
+    html: md.render(post.content),
+  }
   return {
     props: {
-      post: post,
+      postWithHtml,
     },
   }
 }
