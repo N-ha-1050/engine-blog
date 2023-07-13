@@ -33,5 +33,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-src/pages/posts.tsx
 src/pages/task.tsx
