@@ -1,25 +1,29 @@
-import { NextPage } from "next";
+import { SocialLink, SocialLinkProps } from '@/components/SocialLink'
+import { NextPage } from 'next'
+import Link from 'next/link'
 
-type SocialLinkProps = {
-  url: string
-  display_name: string
-}
-const SocialLink = ({url, display_name}: SocialLinkProps) => {
-  return (
-    <li><a href={url}>{display_name}</a></li>
-  )
-}
+const socialLinks: SocialLinkProps[] = [
+  { url: 'https://github.com/N-ha-1050', displayName: 'GitHub' },
+  { url: 'https://twitter.com/N_ha_1050', displayName: 'Twitter' },
+  { url: 'https://atcoder.jp/users/N_ha_1050', displayName: 'AtCoder' },
+]
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>N_ha</h1>
-      <p>Hello, World!</p>
-      <ul>
-        <SocialLink url='https://github.com/N-ha-1050' display_name='GitHub' />
-        <SocialLink url='https://twitter.com/N_ha_ycu' display_name='Twitter' />
-        <SocialLink url='https://atcoder.jp/users/N_ha_1050' display_name='AtCoder' />
+    <div className="flex flex-col items-center">
+      <h1 className="text-4xl mb-2">N_ha</h1>
+      <ul className="flex gap-4 mb-4">
+        {socialLinks.map((socialLink, index) => (
+          <SocialLink key={index} {...socialLink} />
+        ))}
       </ul>
+      <p className="mb-2">プログラミングの活動記録です</p>
+      <Link
+        href="posts/"
+        className="mb-2 border-b border-transparent duration-200 hover:opacity-80 hover:border-blue-950"
+      >
+        すべて見る
+      </Link>
     </div>
   )
 }

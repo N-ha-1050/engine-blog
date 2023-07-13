@@ -13,6 +13,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    fontFamily: {
+      body: ['Noto Sans JP', 'Noto Color Emoji', 'Noto Sans', 'Noto Sans Mono'],
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
