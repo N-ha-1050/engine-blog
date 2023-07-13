@@ -35,7 +35,7 @@ export const getPostMock: GetPost = (id: string) => {
 
 export const getPosts: GetPosts = () => {
   const todayDate = new Date()
-  const posts = fs
+  const posts: Post[] = fs
     .readdirSync('./contents')
     .filter(
       (file) =>
@@ -47,7 +47,7 @@ export const getPosts: GetPosts = () => {
       const [id, title, createdAt, ..._] = file.split(/[_@.]/)
       const post: Post = {
         id: Number(id),
-        createdAt: createdAt,
+        createdAt,
         title,
         content: text,
       }
@@ -58,6 +58,7 @@ export const getPosts: GetPosts = () => {
       return createdAtDate.getTime() <= todayDate.getTime()
     })
     .sort((post1, post2) => post2.id - post1.id)
+  console.log(`getPosts => ${posts.map((post) => `postObject: ${post.title}`)}`)
   return posts
 }
 
@@ -66,10 +67,12 @@ export const getPost: GetPost = (id: string) => {
   if (!post) {
     throw new Error(`Could not find a post with id: ${id}`)
   }
+  console.log(`getPost => postObject: ${post.title}`)
   return post
 }
 
 export const getPostsId: GetPostsId = () => {
   const postsId = getPosts().map((post) => post.id)
+  console.log(`getPostsId => ${postsId}`)
   return postsId
 }

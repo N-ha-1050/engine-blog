@@ -1,7 +1,7 @@
-import { PostPreview, PostWithPlainText } from './PostPreview'
+import { PostPreview, PostWithPlainTextAndLocalDate } from './PostPreview'
 
 export type PostsPreviewProps = {
-  postsWithPlainText: PostWithPlainText[]
+  postsWithPlainText: PostWithPlainTextAndLocalDate[]
 }
 
 export const PostsPreview: React.FC<PostsPreviewProps> = ({

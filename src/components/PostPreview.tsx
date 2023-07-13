@@ -1,16 +1,18 @@
 import { Post } from '@/lib/post'
 import Link from 'next/link'
 
-export type PostWithPlainText = Post & { plainText: string }
+export type PostWithPlainTextAndLocalDate = Post & {
+  plainText: string
+  createdAtLocalDate: string
+}
 
 export type PostPreviewProps = {
-  postWithPlainText: PostWithPlainText
+  postWithPlainText: PostWithPlainTextAndLocalDate
 }
 
 export const PostPreview: React.FC<PostPreviewProps> = ({
   postWithPlainText: post,
 }) => {
-  const createdAtDate = new Date(post.createdAt)
   return (
     <Link
       href={`/posts/${post.id}`}
@@ -18,7 +20,7 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
     >
       <div className="flex items-end gap-4">
         <h2 className="truncate text-xl">{post.title}</h2>
-        <p>{createdAtDate.toLocaleDateString()}</p>
+        <p>{post.createdAtLocalDate}</p>
       </div>
       <p className="truncate indent-4">{post.plainText}</p>
     </Link>

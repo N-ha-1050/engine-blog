@@ -4,30 +4,24 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import MarkdownIt from 'markdown-it'
 
-type PostWithHtml = Post & { html: string }
-
-type Props = {
-  postWithHtml: PostWithHtml
+type PostWithHtmlAndLocalDate = Post & {
+  html: string
+  createdAtLocalOptDate: string
 }
 
-const PostDetail: NextPage<Props> = ({ postWithHtml: post }) => {
-  const createdAtDate = new Date(post.createdAt)
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }
+type Props = {
+  postWithHtmlAndLocalDate: PostWithHtmlAndLocalDate
+}
+
+const PostDetail: NextPage<Props> = ({ postWithHtmlAndLocalDate: post }) => {
   return (
     <div>
-      <h1 className="mb-2 mt-8 text-4xl">{post.title}</h1>
-      <p className="mb-16">
-        活動日: {createdAtDate.toLocaleDateString(undefined, options)}
-      </p>
+      <h1 className="mb-2 mt-8 text-4xl">{post?.title || 'Error'}</h1>
+      <p className="mb-16">活動日: {post?.createdAtLocalOptDate || 'Error'}</p>
       <div
         className="prose m-0"
         dangerouslySetInnerHTML={{
-          __html: post.html,
+          __html: post?.html || 'Error',
         }}
       />
     </div>
@@ -42,16 +36,24 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const post = getPost(params.id)
 
   if (!post) {
-    throw new Error(`Could not find a post with id:${params?.id}`)
+    throw new Error(`Could not find a post with id: ${params?.id}`)
+  }
+  const createdAtDate = new Date(post.createdAt)
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   }
   const md = new MarkdownIt()
-  const postWithHtml: PostWithHtml = {
+  const postWithHtmlAndLocalDate: PostWithHtmlAndLocalDate = {
     ...post,
     html: md.render(post.content),
+    createdAtLocalOptDate: createdAtDate.toLocaleDateString(undefined, options),
   }
   return {
     props: {
-      postWithHtml,
+      postWithHtmlAndLocalDate,
     },
   }
 }
