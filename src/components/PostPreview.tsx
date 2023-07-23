@@ -6,6 +6,7 @@ export type PostPreviewProps = {
 }
 
 export const PostPreview: React.FC<PostPreviewProps> = ({ post }) => {
+  const createdAtDate = new Date(post.createdAt)
   return (
     <Link
       href={`/posts/${post.id}`}
@@ -13,7 +14,7 @@ export const PostPreview: React.FC<PostPreviewProps> = ({ post }) => {
     >
       <div className="flex items-end gap-4">
         <h2 className="truncate text-xl">{post.title}</h2>
-        <p>{post.createdAt}</p>
+        <p>{createdAtDate.toLocaleDateString()}</p>
       </div>
       <div className="truncate indent-4">{post.content}</div>
     </Link>

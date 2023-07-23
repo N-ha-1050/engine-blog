@@ -1,6 +1,5 @@
 import { Post } from '@/types/post'
 import { GetStaticProps, NextPage } from 'next'
-import Link from 'next/link'
 import fs from 'fs/promises'
 import { PostPreview } from '@/components/PostPreview'
 
@@ -32,7 +31,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   )
   return {
     props: {
-      posts,
+      posts: posts.sort((post1, post2) => post2.id - post1.id),
     },
   }
 }
