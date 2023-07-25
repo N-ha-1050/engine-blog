@@ -35,6 +35,9 @@ dependencies:
   markdown-it-plain-text:
     specifier: ^0.3.0
     version: 0.3.0
+  material-icons:
+    specifier: ^1.13.9
+    version: 1.13.9
   next:
     specifier: 13.4.9
     version: 13.4.9(react-dom@18.2.0)(react@18.2.0)
@@ -2338,6 +2341,10 @@ packages:
       linkify-it: 4.0.1
       mdurl: 1.0.1
       uc.micro: 1.0.6
+    dev: false
+
+  /material-icons@1.13.9:
+    resolution: {integrity: sha512-dwuf2C8LR07FcrjRDx0vWnDEcHiDuamXOmtAck8bdONUv5Fi6wR/ubQwPfG1NbcqgPg+y0fHN8Unj5DO+5fV4w==}
     dev: false
 
   /mdast-util-definitions@5.1.2:

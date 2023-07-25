@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { MenuLink, MenuLinkProps } from './MeunLink'
+import 'material-icons/iconfont/outlined.css'
+
 const menuLinks: MenuLinkProps[] = [
   { text: 'Home', to: '/' },
   { text: 'Posts', to: '/posts' },
@@ -21,7 +23,7 @@ const Header = () => {
             onClick={() => setOpen(!isOpen)}
             className="m-4 flex  flex-row gap-1 border-b border-transparent duration-200 hover:border-blue-950 hover:opacity-80 md:hidden"
           >
-            <span className="material-symbols-outlined">
+            <span className="material-icons-outlined">
               {isOpen ? 'close' : 'menu'}
             </span>
             Menu
