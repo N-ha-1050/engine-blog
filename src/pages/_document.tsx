@@ -5,12 +5,8 @@ export default function Document() {
     <Html lang="ja">
       <Head>
         <link rel="icon" href="/favicon.svg" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Sans+Mono:wght@300;400;700&family=Noto+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
-      <body className="font-body">
+      <body className="font-sans font-jp">
         <Main />
         <NextScript />
       </body>
