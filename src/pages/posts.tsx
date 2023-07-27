@@ -21,7 +21,7 @@ const PostList: NextPage<Props> = ({ posts }) => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const postsDir = `${process.cwd()}/src/pages/posts`
+  const postsDir = './src/pages/posts'
   const filenames = await fs.readdir(postsDir)
   const posts: Post[] = await Promise.all(
     filenames.map(async (filename) => {
