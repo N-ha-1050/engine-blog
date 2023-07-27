@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <body className="font-sans font-jp">
+      <body className="font-sansJp">
         <Main />
         <NextScript />
       </body>
