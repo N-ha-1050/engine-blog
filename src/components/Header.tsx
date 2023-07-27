@@ -28,14 +28,6 @@ const Header = () => {
             </span>
             Menu
           </button>
-          {/* <Link
-        href="/"
-        className="text-4xl py-5 px-5 bg-blue-400 text-blue-950 rounded-full"
-      >
-        N_ha
-      </Link> */}
-          {/* <div className="flex-1" />
-      <button className="text-blue-950">Menu</button> */}
         </div>
         <div className={`${isOpen ? 'block' : 'hidden'} md:block`}>
           <ul className="flex flex-col items-center gap-4 p-2 md:flex-row">
