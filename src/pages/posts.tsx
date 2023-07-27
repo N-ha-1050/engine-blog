@@ -9,14 +9,14 @@ type Props = {
 
 const PostList: NextPage<Props> = ({ posts }) => {
   return (
-    <div>
+    <>
       <h1 className="mb-8 text-4xl">一覧</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {posts.map((post) => (
           <PostPreview key={post.id} post={post} />
         ))}
       </div>
-    </div>
+    </>
   )
 }
 
