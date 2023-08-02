@@ -14,11 +14,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h1: Heading1,
     h2: Heading2,
     h3: Heading3,
-    h4: (props) => <h4 className="prose" {...props} />,
+    h4: (props) => (
+      <div className="prose">
+        <h4 {...props} />
+      </div>
+    ),
     a: Anchor,
     // p: (props) => <p className="prose" {...props} />,
-    ul: (props) => <ul className="prose" {...props} />,
-    li: (props) => <li className="prose" {...props} />,
+    ul: (props) => (
+      <div className="prose">
+        <ul {...props} />
+      </div>
+    ),
+    ol: (props) => (
+      <div className="prose">
+        <ol {...props} />
+      </div>
+    ),
     ...components,
   }
 }
