@@ -3,7 +3,7 @@
 import createMDX from '@next/mdx'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeKatex from 'rehype-katex'
-import remarkFrontmatter from 'remark-frontmatter'
+// import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 
@@ -13,7 +13,8 @@ const withMDX = createMDX({
     // If you use remark-gfm, you'll need to use next.config.mjs
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath],
+    // remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath],
+    remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [rehypeKatex, rehypeHighlight],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
