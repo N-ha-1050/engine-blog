@@ -1,4 +1,3 @@
-
 import createMDX from '@next/mdx'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeKatex from 'rehype-katex'
@@ -8,14 +7,8 @@ import remarkMath from 'remark-math'
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
-    // remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath],
     remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [rehypeKatex, rehypeHighlight],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
   },
 })
 
@@ -27,6 +20,4 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-// Merge MDX config with Next.js config
-// module.exports = withMDX(nextConfig)
 export default withMDX(nextConfig)
