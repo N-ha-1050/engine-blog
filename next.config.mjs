@@ -1,4 +1,3 @@
-// next.config.mjs
 
 import createMDX from '@next/mdx'
 import rehypeHighlight from 'rehype-highlight'
