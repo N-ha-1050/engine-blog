@@ -1,4 +1,5 @@
 import { SocialLink, SocialLinkProps } from '@/components/SocialLink'
+import { Title } from '@/components/Title'
 import { NextPage } from 'next'
 import Link from 'next/link'
 
@@ -11,7 +12,7 @@ const socialLinks: SocialLinkProps[] = [
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center">
-      <h1 className="mb-2 text-4xl">N_ha</h1>
+      <Title>N_ha</Title>
       <ul className="mb-4 flex gap-4">
         {socialLinks.map((socialLink, index) => (
           <SocialLink key={index} {...socialLink} />

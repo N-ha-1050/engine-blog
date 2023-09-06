@@ -14,7 +14,10 @@ module.exports = {
       },
     },
     fontFamily: {
-      body: ['Noto Sans JP', 'Noto Color Emoji', 'Noto Sans', 'Noto Sans Mono'],
+      sansJp: ['var(--font-noto-sans-jp)'],
+      sans: ['var(--font-noto-sans)'],
+      mono: ['var(--font-noto-sans-mono)'],
+      emoji: ['var(--font-noto-color-emoji)'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
