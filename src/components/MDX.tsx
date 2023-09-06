@@ -17,6 +17,6 @@ export const Heading3 = ({ ...props }) => (
 )
 export const Anchor = ({ ...props }) => (
   <div className="not-prose">
-    <Link href="/" {...props} />
+    <Link className="border-b border-transparent duration-200 hover:border-blue-950 hover:opacity-80" href="/" {...props} />
   </div>
 )
